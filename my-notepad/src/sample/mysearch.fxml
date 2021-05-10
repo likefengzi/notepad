@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Mysearch">
+   <children>
+      <TextField fx:id="t1" layoutX="50.0" prefHeight="60.0" prefWidth="350.0" />
+      <Button fx:id="br" layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onAction="#replace" prefHeight="30.0" prefWidth="100.0" text="替换" />
+      <TextField fx:id="t2" layoutX="50.0" layoutY="60.0" prefHeight="60.0" prefWidth="350.0" />
+      <Label alignment="CENTER" prefHeight="60.0" prefWidth="50.0" text="查找内容" />
+      <Label alignment="CENTER" layoutY="60.0" prefHeight="60.0" prefWidth="50.0" text="替换为" />
+      <Button fx:id="brall" layoutX="300.0" layoutY="150.0" mnemonicParsing="false" onAction="#replaceall" prefHeight="30.0" prefWidth="100.0" text="全部替换" />
+      <Button fx:id="bs" layoutY="150.0" mnemonicParsing="false" onAction="#search" prefHeight="30.0" prefWidth="100.0" text="查找" />
+   </children>
+</Pane>
