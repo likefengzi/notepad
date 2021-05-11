@@ -849,7 +849,7 @@ public class Controller extends Stage implements Initializable {
         Alert alert = new Alert(Alert.AlertType.INFORMATION); // 创建一个消息对话框
         alert.setTitle("关于记事本");
         alert.setHeaderText("作者");
-        alert.setContentText("王润泽");
+        alert.setContentText("***");
         alert.showAndWait(); //模态显示对话框
     }
     //阅读顺序
