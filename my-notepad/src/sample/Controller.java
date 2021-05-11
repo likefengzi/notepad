@@ -203,11 +203,13 @@ public class Controller extends Stage implements Initializable {
         font = Font.font("微软雅黑", FontWeight.NORMAL, FontPosture.REGULAR, 12);
         my_TextArea.setFont(font);
         my_Label.setText("    第 " + 1 + " 行, 第 " + (0 + 1) + " 列  " + " 共 " + 0 + " 字 ");
+        myedit();
         //监听鼠标点击
         my_TextArea.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
                 mydetils();
+                myedit();
             }
         });
         //监听键盘按下,ALT键切换焦点
@@ -249,7 +251,7 @@ public class Controller extends Stage implements Initializable {
         my_TextArea.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                //mydetils();
+                myedit();
             }
         });
 
@@ -282,6 +284,35 @@ public class Controller extends Stage implements Initializable {
 
         }
 
+    }
+    private void myedit(){
+        if (!my_TextArea.isUndoable()){
+            m21.setDisable(true);
+            cm1.setDisable(true);
+        }else if (my_TextArea.isUndoable()){
+            m21.setDisable(false);
+            cm1.setDisable(false);
+        }
+
+        if (!my_TextArea.isRedoable()){
+            m22.setDisable(true);
+            cm2.setDisable(true);
+        }else if (my_TextArea.isRedoable()){
+            m22.setDisable(false);
+            cm2.setDisable(false);
+        }
+
+        if (my_TextArea.getSelectedText().equals("")){
+            m23.setDisable(true);
+            m24.setDisable(true);
+            cm3.setDisable(true);
+            cm4.setDisable(true);
+        }else if (!my_TextArea.getSelectedText().equals("")){
+            m23.setDisable(false);
+            m24.setDisable(false);
+            cm3.setDisable(false);
+            cm4.setDisable(false);
+        }
     }
 
     //获取main中的stage
